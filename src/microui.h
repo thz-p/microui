@@ -8,8 +8,10 @@
 #ifndef MICROUI_H
 #define MICROUI_H
 
+// 定义 MicroUI 的版本号常量
 #define MU_VERSION "2.01"
 
+// 定义不同数据结构的大小常量
 #define MU_COMMANDLIST_SIZE     (256 * 1024)
 #define MU_ROOTLIST_SIZE        32
 #define MU_CONTAINERSTACK_SIZE  32
@@ -19,46 +21,58 @@
 #define MU_CONTAINERPOOL_SIZE   48
 #define MU_TREENODEPOOL_SIZE    48
 #define MU_MAX_WIDTHS           16
+
+// 定义实数类型和格式化字符串常量
 #define MU_REAL                 float
 #define MU_REAL_FMT             "%.3g"
 #define MU_SLIDER_FMT           "%.2f"
 #define MU_MAX_FMT              127
 
+// 定义一个栈结构的宏，参数 T 表示元素类型，参数 n 表示栈的大小
 #define mu_stack(T, n)          struct { int idx; T items[n]; }
+
+// 定义获取两个数中的最小值和最大值的宏
 #define mu_min(a, b)            ((a) < (b) ? (a) : (b))
 #define mu_max(a, b)            ((a) > (b) ? (a) : (b))
+
+// 将一个数限制在给定范围内的宏
 #define mu_clamp(x, a, b)       mu_min(b, mu_max(a, x))
 
+#endif /* MICROUI_H */
+
+// 枚举类型的定义
 enum {
-  MU_CLIP_PART = 1,
-  MU_CLIP_ALL
+    MU_CLIP_PART = 1,  // 表示部分裁剪的枚举常量，值为 1
+    MU_CLIP_ALL       // 表示全部裁剪的枚举常量，值为 MU_CLIP_PART + 1，即为 2
 };
 
+// 枚举类型的定义
 enum {
-  MU_COMMAND_JUMP = 1,
-  MU_COMMAND_CLIP,
-  MU_COMMAND_RECT,
-  MU_COMMAND_TEXT,
-  MU_COMMAND_ICON,
-  MU_COMMAND_MAX
+    MU_COMMAND_JUMP = 1,  // 表示跳转命令的枚举常量，值为 1
+    MU_COMMAND_CLIP,      // 表示裁剪命令的枚举常量，值为 MU_COMMAND_JUMP + 1，即为 2
+    MU_COMMAND_RECT,      // 表示矩形绘制命令的枚举常量，值为 MU_COMMAND_CLIP + 1，即为 3
+    MU_COMMAND_TEXT,      // 表示文本绘制命令的枚举常量，值为 MU_COMMAND_RECT + 1，即为 4
+    MU_COMMAND_ICON,      // 表示图标绘制命令的枚举常量，值为 MU_COMMAND_TEXT + 1，即为 5
+    MU_COMMAND_MAX        // 表示命令类型的枚举常量的数量
 };
 
+// 枚举类型的定义
 enum {
-  MU_COLOR_TEXT,
-  MU_COLOR_BORDER,
-  MU_COLOR_WINDOWBG,
-  MU_COLOR_TITLEBG,
-  MU_COLOR_TITLETEXT,
-  MU_COLOR_PANELBG,
-  MU_COLOR_BUTTON,
-  MU_COLOR_BUTTONHOVER,
-  MU_COLOR_BUTTONFOCUS,
-  MU_COLOR_BASE,
-  MU_COLOR_BASEHOVER,
-  MU_COLOR_BASEFOCUS,
-  MU_COLOR_SCROLLBASE,
-  MU_COLOR_SCROLLTHUMB,
-  MU_COLOR_MAX
+    MU_COLOR_TEXT,         // 文本颜色
+    MU_COLOR_BORDER,       // 边框颜色
+    MU_COLOR_WINDOWBG,     // 窗口背景颜色
+    MU_COLOR_TITLEBG,      // 标题栏背景颜色
+    MU_COLOR_TITLETEXT,    // 标题栏文本颜色
+    MU_COLOR_PANELBG,      // 面板背景颜色
+    MU_COLOR_BUTTON,       // 按钮颜色
+    MU_COLOR_BUTTONHOVER,  // 鼠标悬停在按钮上时的颜色
+    MU_COLOR_BUTTONFOCUS,  // 按钮获得焦点时的颜色
+    MU_COLOR_BASE,         // 基础颜色
+    MU_COLOR_BASEHOVER,    // 鼠标悬停在基础元素上时的颜色
+    MU_COLOR_BASEFOCUS,    // 基础元素获得焦点时的颜色
+    MU_COLOR_SCROLLBASE,   // 滚动条基础颜色
+    MU_COLOR_SCROLLTHUMB,  // 滚动条滑块颜色
+    MU_COLOR_MAX           // 颜色类型的枚举常量的数量
 };
 
 enum {
