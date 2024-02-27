@@ -91,36 +91,38 @@ enum {
     MU_RES_CHANGE  = (1 << 2)   // 表示资源发生改变的枚举常量，值为 1 左移 2 位，即为 4
 };
 
+// 枚举类型的定义
 enum {
-  MU_OPT_ALIGNCENTER  = (1 << 0),
-  MU_OPT_ALIGNRIGHT   = (1 << 1),
-  MU_OPT_NOINTERACT   = (1 << 2),
-  MU_OPT_NOFRAME      = (1 << 3),
-  MU_OPT_NORESIZE     = (1 << 4),
-  MU_OPT_NOSCROLL     = (1 << 5),
-  MU_OPT_NOCLOSE      = (1 << 6),
-  MU_OPT_NOTITLE      = (1 << 7),
-  MU_OPT_HOLDFOCUS    = (1 << 8),
-  MU_OPT_AUTOSIZE     = (1 << 9),
-  MU_OPT_POPUP        = (1 << 10),
-  MU_OPT_CLOSED       = (1 << 11),
-  MU_OPT_EXPANDED     = (1 << 12)
+    MU_OPT_ALIGNCENTER  = (1 << 0),  // 表示居中对齐的选项，值为 1 左移 0 位，即为 1
+    MU_OPT_ALIGNRIGHT   = (1 << 1),  // 表示右对齐的选项，值为 1 左移 1 位，即为 2
+    MU_OPT_NOINTERACT   = (1 << 2),  // 表示不可交互的选项，值为 1 左移 2 位，即为 4
+    MU_OPT_NOFRAME      = (1 << 3),  // 表示无边框的选项，值为 1 左移 3 位，即为 8
+    MU_OPT_NORESIZE     = (1 << 4),  // 表示不可改变大小的选项，值为 1 左移 4 位，即为 16
+    MU_OPT_NOSCROLL     = (1 << 5),  // 表示无滚动条的选项，值为 1 左移 5 位，即为 32
+    MU_OPT_NOCLOSE      = (1 << 6),  // 表示无关闭按钮的选项，值为 1 左移 6 位，即为 64
+    MU_OPT_NOTITLE      = (1 << 7),  // 表示无标题的选项，值为 1 左移 7 位，即为 128
+    MU_OPT_HOLDFOCUS    = (1 << 8),  // 表示保持焦点的选项，值为 1 左移 8 位，即为 256
+    MU_OPT_AUTOSIZE     = (1 << 9),  // 表示自动调整大小的选项，值为 1 左移 9 位，即为 512
+    MU_OPT_POPUP        = (1 << 10), // 表示弹出式窗口的选项，值为 1 左移 10 位，即为 1024
+    MU_OPT_CLOSED       = (1 << 11), // 表示关闭状态的选项，值为 1 左移 11 位，即为 2048
+    MU_OPT_EXPANDED     = (1 << 12)  // 表示展开状态的选项，值为 1 左移 12 位，即为 4096
 };
 
+// 枚举类型的定义
 enum {
-  MU_MOUSE_LEFT       = (1 << 0),
-  MU_MOUSE_RIGHT      = (1 << 1),
-  MU_MOUSE_MIDDLE     = (1 << 2)
+    MU_MOUSE_LEFT    = (1 << 0),  // 表示鼠标左键的枚举常量，值为 1 左移 0 位，即为 1
+    MU_MOUSE_RIGHT   = (1 << 1),  // 表示鼠标右键的枚举常量，值为 1 左移 1 位，即为 2
+    MU_MOUSE_MIDDLE  = (1 << 2)   // 表示鼠标中键的枚举常量，值为 1 左移 2 位，即为 4
 };
 
+// 枚举类型的定义
 enum {
-  MU_KEY_SHIFT        = (1 << 0),
-  MU_KEY_CTRL         = (1 << 1),
-  MU_KEY_ALT          = (1 << 2),
-  MU_KEY_BACKSPACE    = (1 << 3),
-  MU_KEY_RETURN       = (1 << 4)
+    MU_KEY_SHIFT       = (1 << 0),  // 表示 Shift 键的枚举常量，值为 1 左移 0 位，即为 1
+    MU_KEY_CTRL        = (1 << 1),  // 表示 Ctrl 键的枚举常量，值为 1 左移 1 位，即为 2
+    MU_KEY_ALT         = (1 << 2),  // 表示 Alt 键的枚举常量，值为 1 左移 2 位，即为 4
+    MU_KEY_BACKSPACE   = (1 << 3),  // 表示退格键的枚举常量，值为 1 左移 3 位，即为 8
+    MU_KEY_RETURN      = (1 << 4)   // 表示回车键的枚举常量，值为 1 左移 4 位，即为 16
 };
-
 
 typedef struct mu_Context mu_Context;
 typedef unsigned mu_Id;
