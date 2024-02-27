@@ -75,18 +75,20 @@ enum {
     MU_COLOR_MAX           // 颜色类型的枚举常量的数量
 };
 
+// 枚举类型的定义
 enum {
-  MU_ICON_CLOSE = 1,
-  MU_ICON_CHECK,
-  MU_ICON_COLLAPSED,
-  MU_ICON_EXPANDED,
-  MU_ICON_MAX
+    MU_ICON_CLOSE = 1,     // 表示关闭图标的枚举常量，值为 1
+    MU_ICON_CHECK,         // 表示勾选图标的枚举常量，值为 MU_ICON_CLOSE + 1，即为 2
+    MU_ICON_COLLAPSED,     // 表示折叠图标的枚举常量，值为 MU_ICON_CHECK + 1，即为 3
+    MU_ICON_EXPANDED,      // 表示展开图标的枚举常量，值为 MU_ICON_COLLAPSED + 1，即为 4
+    MU_ICON_MAX            // 表示图标类型的枚举常量的数量
 };
 
+// 枚举类型的定义
 enum {
-  MU_RES_ACTIVE       = (1 << 0),
-  MU_RES_SUBMIT       = (1 << 1),
-  MU_RES_CHANGE       = (1 << 2)
+    MU_RES_ACTIVE  = (1 << 0),  // 表示资源处于活动状态的枚举常量，值为 1 左移 0 位，即为 1
+    MU_RES_SUBMIT  = (1 << 1),  // 表示资源被提交的枚举常量，值为 1 左移 1 位，即为 2
+    MU_RES_CHANGE  = (1 << 2)   // 表示资源发生改变的枚举常量，值为 1 左移 2 位，即为 4
 };
 
 enum {
