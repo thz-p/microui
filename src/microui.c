@@ -25,8 +25,10 @@
 #include <string.h>
 #include "microui.h"
 
+// 定义一个宏，用于表示未使用的变量，这样可以避免编译器警告
 #define unused(x) ((void) (x))
 
+// 定义一个宏，用于检查条件是否满足，如果条件不满足，则输出错误信息并终止程序执行
 #define expect(x) do {                                               \
     if (!(x)) {                                                      \
       fprintf(stderr, "Fatal error: %s:%d: assertion '%s' failed\n", \
@@ -35,17 +37,18 @@
     }                                                                \
   } while (0)
 
+// 定义一个宏，用于向栈中推入一个值
 #define push(stk, val) do {                                                 \
     expect((stk).idx < (int) (sizeof((stk).items) / sizeof(*(stk).items))); \
     (stk).items[(stk).idx] = (val);                                         \
-    (stk).idx++; /* incremented after incase `val` uses this value */       \
+    (stk).idx++; /* 在增加 `idx` 之前增加，以防 `val` 使用此值 */              \
   } while (0)
 
+// 定义一个宏，用于从栈中弹出一个值
 #define pop(stk) do {      \
     expect((stk).idx > 0); \
     (stk).idx--;           \
   } while (0)
-
 
 static mu_Rect unclipped_rect = { 0, 0, 0x1000000, 0x1000000 };
 
